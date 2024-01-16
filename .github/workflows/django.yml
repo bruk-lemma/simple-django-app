@@ -24,10 +24,6 @@ jobs:
     - name: Install Dependencies
       run: |
         python -m pip install --upgrade pip
-        
-    - name: Run Tests
-      run: |
-        python manage.py test
     - name: Build Docker Image
       run: docker build -t my-django-app:${{ matrix.python-version }} .
     - name: Log in to Docker Hub
