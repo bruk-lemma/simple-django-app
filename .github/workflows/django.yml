@@ -31,6 +31,6 @@ jobs:
       with:
         username: ${{ secrets.DOCKER_USERNAME }}
         password: ${{ secrets.DOCKER_PASSWORD }}
-    - name: Push Docker Image
+    - name: Push Docker Image-
       run: sudo docker push my-django-app:${{ matrix.python-version }}
 
