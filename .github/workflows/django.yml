@@ -23,7 +23,7 @@ jobs:
         python-version: ${{ matrix.python-version }}
     - name: Install Dependencies
       run: |
-        python -m pip install --upgrade 
+        python -m pip install --upgrade pip
     - name: Build Docker Image
       run: sudo docker build -t my-django-app:${{ matrix.python-version }} .
     - name: Log in to Docker Hub
