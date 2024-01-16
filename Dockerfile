@@ -13,8 +13,8 @@ RUN apt-get update && apt-get install -y --no-install-recommends gcc libpq-dev &
     rm -rf /var/lib/apt/lists/*
 
 # Install Python dependencies
-COPY requirements.txt /usr/src/app/
-RUN pip install --upgrade pip && pip install -r requirements.txt
+
+RUN pip install --upgrade 
 
 # Copy project
 COPY . /usr/src/app/
