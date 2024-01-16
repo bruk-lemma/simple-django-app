@@ -25,12 +25,12 @@ jobs:
       run: |
         python -m pip install --upgrade pip
     - name: Build Docker Image
-      run: docker build -t my-django-app:${{ matrix.python-version }} .
+      run: sudo docker build -t my-django-app:${{ matrix.python-version }} .
     - name: Log in to Docker Hub
       uses: docker/login-action@v1
       with:
         username: ${{ secrets.DOCKER_USERNAME }}
         password: ${{ secrets.DOCKER_PASSWORD }}
     - name: Push Docker Image
-      run: docker push my-django-app:${{ matrix.python-version }}
+      run: sudo docker push my-django-app:${{ matrix.python-version }}
 
